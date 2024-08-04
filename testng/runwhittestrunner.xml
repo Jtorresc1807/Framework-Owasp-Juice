@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="juice-shop.herokuapp" guice-stage="DEVELOPMENT">
+    <test thread-count="5" name="Run whit tags in TestRunner class">
+    </test>
+    <listeners>
+                <listener class-name="com.juice.listeners.AnnotationTransformer"></listener>
+    </listeners>
+
+    <test name="Description: Testng, Run whit tags in TestRunner class">
+        <classes>
+            <class name="com.juice.runner.TestRunner">
+                <methods>
+                    <include name="setUpClass"/>
+                    <include name="tearDownClass"/>
+                    <include name="runScenario" invocation-numbers="0 1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

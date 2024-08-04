@@ -1,0 +1,9 @@
+{
+  "reportName": "Build #6667",
+  "buildOrder": 4567,
+  "reportUrl": "http://example.org/build#1234/AllureReport",
+  "name": "Jenkins",
+  "type": "jenkins",
+  "buildName": "allure-report_deploy#4567",
+  "buildUrl": "http://example.org/build#4567"
+}
