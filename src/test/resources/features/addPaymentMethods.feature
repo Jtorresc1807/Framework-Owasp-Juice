@@ -1,11 +1,13 @@
-@AddPayMet
-Feature: Login on OWASP juice-shop and add Payment Methods
+@AddPayMet @ui @HU004
+@normal
+@allure.label.owner=JaimeT
+Feature: Feature: Login on OWASP juice-shop and add Payment Methods
   as user on page juice-shop
   I want to log into my account
   for add two Payment Methods
 
 
-  Scenario: Login with user correct credentials and add Payment Methods
+  Scenario: Scenario: Login with user correct credentials and add Payment Methods
 
     Given user enter log in page "https://juice-shop.herokuapp.com/#/login"
     When user log in with credentials

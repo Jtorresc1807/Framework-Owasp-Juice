@@ -1,10 +1,13 @@
-@AddAddress
-Feature: Login on OWASP juice-shop and add Shipping Address
-  as user on page juice-shop
-  I want to log into my account
-  for add two Shipping Address
+@AddAddress @ui @HU003
+@trivial
+@allure.label.owner=JaimeT
 
-  Scenario: Login with user correct credentials and add Shipping Address
+Feature: Feature: Login on OWASP juice-shop and add Shipping Address
+  As user on page juice-shop
+  I want to log into my account
+  For add two Shipping Address
+
+  Scenario: Scenario: Login with user correct credentials and add Shipping Address
 
     Given user enter log in page "https://juice-shop.herokuapp.com/#/login"
     When user log in with credentials

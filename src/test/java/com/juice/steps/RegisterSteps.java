@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,12 +22,19 @@ public class RegisterSteps extends Base {
     protected RegisterPage registerPage = new RegisterPage(driver);
     protected Hooks hooks;
 
-    public RegisterSteps(Hooks hooks) {     //Builder
+    /** Builder **/
+    public RegisterSteps(Hooks hooks) {
         this.hooks = hooks;
     }
 
     @Given("new user is on register page {string}")
     public void new_user_is_on_register_page(String url) {
+        Allure.getLifecycle().updateTestCase(result ->result.setName("Register on OWASP juice-shop"));  // --Allure ok
+        Allure.label("tag", "Environment: Preprod ");   // --Allure ok
+        Allure.link("Documentatión", "https://github.com/juice-shop/juice-shopeeeee");  // --Allure ok
+        Allure.issue("Bug-123321", "https://Url_del_Bug123111");   // --Allure ok
+        Allure.tms("TMS-123", "https://Url donde esta la descripcion");  // --Allure ok
+        Allure.epic("EPIC: Testing And Integration To Plataform OWASP Juice Shop");  // --Allure ok section Behaviors
         Log.info("A new user is on register page");
         driver.get(url);
     }

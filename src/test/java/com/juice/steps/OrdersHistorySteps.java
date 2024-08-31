@@ -5,6 +5,7 @@ import com.juice.pages.OrdersHistoryPage;
 import com.juice.utils.Base;
 import com.juice.utils.Hooks;
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,12 +19,19 @@ public class OrdersHistorySteps extends Base {
     protected OrdersHistoryPage ordersHistoryPage = new OrdersHistoryPage(driver);
     protected Hooks hooks;
 
-    public OrdersHistorySteps(Hooks hooks) {     //Builder
+    /** Builder **/
+    public OrdersHistorySteps(Hooks hooks) {
         this.hooks = hooks;
     }
 
     @Then("user enter in page {string}")
     public void user_enter_in_page(String url) {
+        Allure.getLifecycle().updateTestCase(result ->result.setName("Login on OWASP juice-shop and take screenshot to orders"));
+        Allure.label("tag", "Environment: Preprod ");
+        Allure.link("Documentatión", "https://github.com/juice-shop/juice-shopeeeee");
+        Allure.issue("Bug-123666", "https://Url_del_Bug123333");
+        Allure.tms("TMS-123", "https://Url donde esta la descripcion");
+        Allure.epic("EPIC: Testing And Integration To Plataform OWASP Juice Shop");
         Log.info("User go to order history page");
         driver.get(url);
     }
@@ -38,5 +46,4 @@ public class OrdersHistorySteps extends Base {
         Assert.assertEquals(title.getText(), expected_title);
         ordersHistoryPage.takeScreenshotToPurchaseOrders(OrdersScreenshot);
     }
-
 }

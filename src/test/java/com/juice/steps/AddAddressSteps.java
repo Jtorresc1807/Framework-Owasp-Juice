@@ -7,6 +7,7 @@ import com.juice.utils.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,12 +22,21 @@ public class AddAddressSteps extends Base {
     protected AddAddressFactory addAddressFactory = new AddAddressFactory(driver);
     protected Hooks hooks;
 
-    public AddAddressSteps(Hooks hooks) {     //Builder
+    /** Builder **/
+    public AddAddressSteps(Hooks hooks) {
         this.hooks = hooks;
     }
 
     @Given("user enter log in page {string}")
     public void user_enter_log_in_page(String url) {
+        Allure.getLifecycle().updateTestCase(result ->result.setName("Login on OWASP juice-shop and add Shipping Address"));
+        Allure.label("tag", "Environment: QA ");
+        Allure.link("Documentatión", "https://github.com/juice-shop/juice-shopeeeee");
+        Allure.issue("Bug-123321", "https://Url_del_Bug123222");
+        Allure.tms("TMS-123", "https://Url donde esta la descripcion");
+        Allure.epic("EPIC: Testing And Integration To Plataform OWASP Juice Shop");
+        //Allure.label("owner", "JaimeT");
+        //Allure.label("severity", "minor");
         Log.info("User go to login page");
         driver.get(url);
     }
@@ -57,7 +67,7 @@ public class AddAddressSteps extends Base {
 
     @When("user fill out form twice")
     public void user_fill_out_form_twice(io.cucumber.datatable.DataTable dataTable) {
-        Log.info("user fill out form to address register twice");
+        Log.info("User fill out form to address register twice");
         List<List<String>> loginData = dataTable.asLists();
         for (List<String> list : loginData) {
             addAddressFactory.fillOutFormAddNewAddressTwo(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4), list.get(5), list.get(6));

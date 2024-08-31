@@ -22,7 +22,6 @@ public class RegisterPage extends Base {
     /** Builder **/
     public RegisterPage (WebDriver driver){
         PageFactory.initElements(driver, this);
-
     }
 
     /** Methods **/
@@ -40,6 +39,4 @@ public class RegisterPage extends Base {
     public void clickOnRegister() {
         driver.findElement(btnRegister).click();
     }
-
 }
-

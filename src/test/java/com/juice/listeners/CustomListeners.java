@@ -30,23 +30,23 @@ public class CustomListeners implements ITestListener {
     @Override           // Método que se ejecuta cuando un método de prueba falla, pero está dentro del porcentaje de éxito definido
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
         // TODO Auto-generated method stub
-        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
+        // ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
     }
 
-    @Override           // Método que se ejecuta cuando un método de prueba falla por tiempo de espera agotado
+    //@Override           // Método que se ejecuta cuando un método de prueba falla por tiempo de espera agotado
     public void onTestFailedWithTimeout(ITestResult result) {
         // TODO Auto-generated method stub
-        ITestListener.super.onTestFailedWithTimeout(result);
+        //ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
     }
 
     @Override           // Método que se ejecuta antes de iniciar los tests
     public void onStart(ITestContext context) {
         // TODO Auto-generated method stub
-        ITestListener.super.onStart(context);
+        //ITestListener.super.onStart(context);
     }
     @Override           // Método que se ejecuta después de finalizar los tests
     public void onFinish(ITestContext context) {
         // TODO Auto-generated method stub
-        ITestListener.super.onFinish(context);
+        //ITestListener.super.onFinish(context);
     }
 }

@@ -1,52 +1,44 @@
 package com.juice.steps;
 
 import com.juice.factory.OrdersFactory;
+import com.juice.listeners.CustomListeners;
 import com.juice.logs.Log;
 import com.juice.utils.Base;
 import com.juice.utils.Hooks;
-import com.juice.utils.ProductSelector;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
-import jdk.jfr.Name;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
-@Listeners(com.juice.listeners.CustomListeners.class)
-//@Epic("Epic - Login Module")
-//@Feature("Feature - Login validation for the application demo.nopcommerce.com with different test cases")
+@Listeners(CustomListeners.class)
 
 public class OrdersSteps extends Base {
 
     protected OrdersFactory ordersFactory = new OrdersFactory(driver);
+
     protected Hooks hooks;
 
     public OrdersSteps(Hooks hooks) {
         this.hooks = hooks;
     }
 
-    @Test(testName = "User add 3 products apple, banana and t_shirt", priority = 1, groups = {"Regression", "Integration"})
-    @Description("Test Description: Add 3 products to basket to do purchase")
-    @Severity(SeverityLevel.BLOCKER)
-    @Owner("Jaime Torres")
-    @Story("User story 456732, Sprint 65")
-    @Name("User add 3 products to basket")
     @Then("user add {int} products \\(Apple, Banana, T-shirt) to basket")
-    public void user_add_products_apple_banana_t_shirt_to_basket(Integer int1, io.cucumber.datatable.DataTable dataTable) {
+    public void user_add_products_apple_banana_t_shirt_to_basket(Integer int1, DataTable dataTable) {
+        Allure.getLifecycle().updateTestCase(result ->result.setName("Login on OWASP juice-shop and add products to basket and do purchase"));
+        Allure.label("tag", "Environment: QA ");
+        Allure.link("Documentatión", "https://github.com/juice-shop/juice-shopeeeee");
+        Allure.issue("Bug-123555", "https://Url_del_Bug123333");
+        Allure.tms("TMS-123", "https://Url donde esta la descripcion");
+        Allure.epic("EPIC: Testing And Integration To Plataform OWASP Juice Shop");
         Log.info("The user add 3 products... (Apple, Banana, T-shirt)");
         List<List<String>> loginData = dataTable.asLists();
         for (List<String> list : loginData) {
@@ -80,7 +72,6 @@ public class OrdersSteps extends Base {
 
         for (WebElement product  : selectedProducts) {
             product.click();
-        } */
+        }     */
     }
 }
-

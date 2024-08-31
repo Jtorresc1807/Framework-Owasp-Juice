@@ -1,7 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Jul 28 14:25:22 COT 2024","Sun Jul 28 14:25:33 COT 2024","10764","","Login on OWASP juice-shop","","Login with Failed login","","Login with Failed login","  as user on page juice-shop
-  I want to log into my account
-  for make a purchase"
-"passed","Sun Jul 28 14:25:10 COT 2024","Sun Jul 28 14:25:22 COT 2024","11536","","Login on OWASP juice-shop","","Login with user correct credentials","","Login with user correct credentials","  as user on page juice-shop
-  I want to log into my account
-  for make a purchase"

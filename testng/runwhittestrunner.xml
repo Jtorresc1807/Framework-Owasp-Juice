@@ -7,7 +7,7 @@
                 <listener class-name="com.juice.listeners.AnnotationTransformer"></listener>
     </listeners>
 
-    <test name="Description: Testng, Run whit tags in TestRunner class">
+    <test name="Description: Testng, Run whit tags in TestRunner class, so fail test repeat whit Retry class">
         <classes>
             <class name="com.juice.runner.TestRunner">
                 <methods>

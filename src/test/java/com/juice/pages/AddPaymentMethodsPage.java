@@ -23,11 +23,9 @@ public class AddPaymentMethodsPage extends Base {
     /** Builder **/
     public AddPaymentMethodsPage (WebDriver driver){
        PageFactory.initElements(driver, this);
-
     }
 
     /** Methods **/
-
 
     public void fillOutFormAddPaymentMethods(String name, String cardnumber){
         driver.findElement(btnCookies).click();
@@ -45,7 +43,6 @@ public class AddPaymentMethodsPage extends Base {
         driver.findElement(btnSubmit).click();
         driver.navigate().refresh();
     }
-
 
     public void fillOutFormAddPaymentMethodsTwo(String name, String cardnumber){
         driver.findElement(btnAddNewCard).click();

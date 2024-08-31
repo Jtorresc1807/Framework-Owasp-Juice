@@ -37,5 +37,4 @@ public class LoginFactory extends Base {
     public void clickOnLogin() {
         btnLogin.click();
     }
-
 }

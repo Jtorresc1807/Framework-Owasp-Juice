@@ -16,7 +16,6 @@ import java.util.List;
 
 public class OrdersFactory extends Base {
 
-
     /** WebElements Locators **/
     @FindBy(xpath = "//a[@class='cc-btn cc-dismiss']") protected WebElement btnCookies;
     @FindBy(xpath = "//mat-icon[contains(text(),' search ')]") protected WebElement iconSearch;
@@ -31,7 +30,6 @@ public class OrdersFactory extends Base {
     @FindBy(xpath = "(//span[@class='mat-radio-outer-circle'])[1]") protected WebElement radioPayment;
     @FindBy(xpath = "//button[@aria-label='Proceed to review']") protected WebElement btnContinuePay;
     @FindBy(xpath = "//button[@aria-label='Complete your purchase']") protected WebElement btnOrderAndPAy;
-
 
     /** Builder **/
 
@@ -60,7 +58,7 @@ public class OrdersFactory extends Base {
 
     public void doProductsCheckout(){
         btnYourBasket.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+        WebDriverWait wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[@class='mat-simple-snack-bar-content']")));
         btnCheckout.click();
         radioAddress.click();
@@ -78,11 +76,9 @@ public class OrdersFactory extends Base {
     public void add2ProductsToBasket(){
         btnCookies.click();
         ProductSelector selector = new ProductSelector(driver);
-        List<WebElement> selectedProducts = selector.selectRandomProducts(2);
+        List<WebElement> selectedProducts = selector.selectRandomProducts(3);
         for (WebElement btnAddBasket : selectedProducts) {
             btnAddBasket.click();
         }
-
     }
-
 }
